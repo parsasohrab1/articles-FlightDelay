@@ -1,0 +1,82 @@
+{
+ "note": "real BTS On-Time data; pre-departure features only; alpha=0.1; 150k flights sampled per month",
+ "n": {
+  "train": 71576,
+  "cal": 34854,
+  "test": 43570,
+  "july": 150000
+ },
+ "arr_delay_quantiles_jan_test": {
+  "0.05": -28.0,
+  "0.5": -5.0,
+  "0.9": 39.0,
+  "0.95": 71.0
+ },
+ "share_prev_delay_known": 0.84746,
+ "models": {
+  "schedule_only": {
+   "mae_test": 29.86302179062268,
+   "mae_test_median_baseline": 22.82077117282534,
+   "rmse_test": 56.46586803590077,
+   "rmse_test_mean_baseline": 54.43715982362477,
+   "split_conformal": {
+    "coverage": 0.8947670415423457,
+    "mean_width_min": 111.75336073949046,
+    "coverage_prev_delay_gt15": 0.8908116385911179,
+    "coverage_prev_delay_le15_or_unknown": 0.895464362850972,
+    "coverage_departures_after_17h": 0.884859692851974,
+    "coverage_departures_before_9h": 0.8999518999519
+   },
+   "cqr": {
+    "coverage": 0.8849896717925178,
+    "mean_width_min": 114.62291770460354,
+    "coverage_prev_delay_gt15": 0.9010719754977029,
+    "coverage_prev_delay_le15_or_unknown": 0.8821544276457883,
+    "coverage_departures_after_17h": 0.8681354024282383,
+    "coverage_departures_before_9h": 0.8935064935064935
+   },
+   "july_cqr_january_calibration": {
+    "coverage": 0.8739133333333333,
+    "mean_width_min": 111.14961288115205
+   },
+   "july_cqr_recalibrated_2000": {
+    "coverage": 0.9110337837837837,
+    "mean_width_min": 122.97310154221383,
+    "margin_min": 7.088313017992906,
+    "january_margin_min": 1.168879687087962
+   }
+  },
+  "with_previous_leg": {
+   "mae_test": 26.022155150199243,
+   "mae_test_median_baseline": 22.82077117282534,
+   "rmse_test": 53.663741890884666,
+   "rmse_test_mean_baseline": 54.43715982362477,
+   "split_conformal": {
+    "coverage": 0.8853798485196236,
+    "mean_width_min": 94.8364531442687,
+    "coverage_prev_delay_gt15": 0.862021439509954,
+    "coverage_prev_delay_le15_or_unknown": 0.8894978401727862,
+    "coverage_departures_after_17h": 0.8792313258824476,
+    "coverage_departures_before_9h": 0.8840788840788841
+   },
+   "cqr": {
+    "coverage": 0.8873307321551527,
+    "mean_width_min": 97.86823580610303,
+    "coverage_prev_delay_gt15": 0.8935681470137825,
+    "coverage_prev_delay_le15_or_unknown": 0.886231101511879,
+    "coverage_departures_after_17h": 0.8741657956098737,
+    "coverage_departures_before_9h": 0.8915824915824916
+   },
+   "july_cqr_january_calibration": {
+    "coverage": 0.8804666666666666,
+    "mean_width_min": 101.04149518009791
+   },
+   "july_cqr_recalibrated_2000": {
+    "coverage": 0.9092770270270271,
+    "mean_width_min": 108.84129319235257,
+    "margin_min": 5.757259182547326,
+    "january_margin_min": 1.8479162639626203
+   }
+  }
+ }
+}
